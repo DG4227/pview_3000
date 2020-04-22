@@ -9,14 +9,14 @@ services:
     ports:
       - 5432:5432
   photo_api:
-    build: .
+    build: photo_viewer
     volumes:
-      - .:/photo_viewer
+      - ./photo_viewer:/photo_viewer
     ports:
       - 3000:3000
     depends_on:
       - db
   photo_frontend:
-    build: ../vue_photo_viewer
+    build: vue_photo_viewer
     ports:
       - 8080:8080
