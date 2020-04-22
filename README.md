@@ -4,7 +4,7 @@ To run this you will need `docker` and `docker-compose`
 
 Once those are installed, navigate to the root directory
 
-From there, enter the command 'docker-compose up' 
+From there, enter the command `docker-compose up`
 
 Once all containers are up and running, execute the following command from the root directory to create and populate the db: 
 
