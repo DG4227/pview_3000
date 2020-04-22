@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  photo_api:
+    build: .
+    volumes:
+      - .:/photo_viewer
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  photo_frontend:
+    build: ../vue_photo_viewer
+    ports:
+      - 8080:8080
